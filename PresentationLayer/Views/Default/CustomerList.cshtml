@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete;
+@model List<Customer>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Müşteri</th>
+            <th>Bakiye</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerID</td>
+                <td>@item.CustomerName</td>
+                <td>@item.CustomerBalance</td>
+            </tr>
+        }
+    </table>
+    <a class="btn btn-outline-info" href="/Default/CustomerAdd/">Yeni Müşteri Girişi</a>
+    <a class="btn btn-outline-danger" href="/Default/Transaction/">Yeni İşlem Girişi</a>
+
+</div>
